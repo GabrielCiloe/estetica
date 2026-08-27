@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fotodepilação e estética com atendimento personalizado da Carla em Engenheiro Coelho. Agende sua avaliação gratuita pelo WhatsApp.">
+  <meta name="theme-color" content="#8f5d5d">
+  <title>Carla Estética | Fotodepilação em Engenheiro Coelho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { ink:'#352b2b', rose:'#9a6562', blush:'#ead5ce', cream:'#f8f3ee', sage:'#77856c' },
+      fontFamily: { sans:['DM Sans','sans-serif'], display:['Italiana','serif'] },
+      boxShadow: { soft:'0 24px 70px rgba(82,50,46,.12)' }
+    }}}
+  </script>
+  <style>
+    body{background:#f8f3ee}.noise{background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E")}
+    .hero-img{clip-path:polygon(8% 0,100% 0,100% 92%,88% 100%,0 100%,0 10%)}
+    .marquee{animation:marquee 22s linear infinite}.marquee>span{display:flex;flex-shrink:0;min-width:100vw;justify-content:space-around}@keyframes marquee{to{transform:translateX(-50%)}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.marquee{animation:none}}
+  </style>
+</head>
+<body class="font-sans text-ink antialiased selection:bg-blush">
+  <div class="noise fixed inset-0 pointer-events-none z-50"></div>
+  <header class="fixed top-0 inset-x-0 z-40 bg-cream/85 backdrop-blur-lg border-b border-ink/5">
+    <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between" aria-label="Navegação principal">
+      <a href="#inicio" class="leading-none" aria-label="Carla Estética — início"><span class="font-display text-2xl">Carla</span><span class="block text-[9px] uppercase tracking-[.32em] text-rose mt-1">Estética & Fotodepilação</span></a>
+      <div class="hidden md:flex items-center gap-8 text-sm"><a href="#sobre" class="hover:text-rose">Sobre</a><a href="#servicos" class="hover:text-rose">Procedimentos</a><a href="#avaliacoes" class="hover:text-rose">Avaliações</a><a href="#contato" class="hover:text-rose">Contato</a></div>
+      <a href="https://wa.me/5519971131650?text=Olá%2C%20Carla!%20Gostaria%20de%20agendar%20uma%20avaliação%20gratuita." target="_blank" rel="noopener" class="rounded-full bg-ink text-white px-5 py-3 text-sm font-semibold hover:bg-rose transition-colors"><i class="fa-brands fa-whatsapp mr-2"></i><span class="hidden sm:inline">Agendar avaliação</span><span class="sm:hidden">Agendar</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="relative min-h-screen pt-28 pb-16 flex items-center overflow-hidden">
+      <div class="absolute top-24 -left-40 w-96 h-96 rounded-full bg-blush/60 blur-3xl"></div>
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center">
+        <div class="relative z-10 pt-8 lg:pt-0">
+          <div class="hero-copy inline-flex items-center gap-2 text-xs uppercase tracking-[.2em] text-rose font-semibold mb-7"><span class="w-8 h-px bg-rose"></span> Beleza que respeita você</div>
+          <h1 class="hero-copy font-display text-[3.55rem] sm:text-7xl lg:text-[5.7rem] leading-[.94] tracking-tight">Pele lisinha.<br><span class="text-rose italic">Leveza</span> que dura.</h1>
+          <p class="hero-copy mt-7 text-lg text-ink/70 max-w-xl leading-relaxed">Fotodepilação e cuidados estéticos com tecnologia, conforto e o atendimento acolhedor da Carla — pertinho de você, em Engenheiro Coelho.</p>
+          <div class="hero-copy mt-9 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+            <a href="https://wa.me/5519971131650?text=Olá%2C%20Carla!%20Quero%20agendar%20minha%20avaliação%20gratuita." target="_blank" rel="noopener" class="group rounded-full bg-rose text-white px-7 py-4 font-semibold shadow-soft hover:-translate-y-1 transition-transform"><i class="fa-brands fa-whatsapp text-lg mr-2"></i>Agendar avaliação gratuita <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i></a>
+            <span class="text-sm text-ink/55"><i class="fa-regular fa-clock mr-2 text-rose"></i>Segunda a sábado · até 18h</span>
+          </div>
+          <div class="hero-copy mt-12 flex gap-8"><div><strong class="font-display text-3xl">5.0</strong><div class="text-amber-500 text-xs tracking-wider">★★★★★</div></div><div class="border-l border-ink/15 pl-8 text-sm text-ink/60 leading-relaxed">Excelência confirmada<br>por clientes reais no Google</div></div>
+        </div>
+        <div class="hero-visual relative lg:h-[690px]">
+          <div class="hero-img h-[520px] lg:h-full overflow-hidden bg-blush shadow-soft"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=88" alt="Mulher recebendo tratamento facial em ambiente tranquilo" class="w-full h-full object-cover" fetchpriority="high"></div>
+          <div class="absolute -bottom-5 -left-5 sm:-left-10 bg-white p-5 shadow-soft max-w-[220px]"><div class="flex items-center gap-3"><span class="grid place-items-center w-11 h-11 rounded-full bg-blush text-rose"><i class="fa-solid fa-wand-magic-sparkles"></i></span><span class="text-sm font-semibold">Cuidado humano.<br>Tecnologia de ponta.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="overflow-hidden border-y border-ink/10 py-4 bg-white/50" aria-hidden="true"><div class="marquee flex whitespace-nowrap w-max font-display text-2xl text-ink/50"><span>FOTODEPILAÇÃO &nbsp;✦&nbsp; ESTÉTICA FACIAL &nbsp;✦&nbsp; CUIDADO PERSONALIZADO &nbsp;✦&nbsp; ESTÉTICA CORPORAL &nbsp;✦&nbsp;&nbsp;</span><span>FOTODEPILAÇÃO &nbsp;✦&nbsp; ESTÉTICA FACIAL &nbsp;✦&nbsp; CUIDADO PERSONALIZADO &nbsp;✦&nbsp; ESTÉTICA CORPORAL &nbsp;✦&nbsp;&nbsp;</span></div></div>
+
+    <section id="sobre" class="py-24 lg:py-36"><div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="reveal relative"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1000&q=85" alt="Momento de autocuidado e bem-estar" class="w-[88%] h-[530px] object-cover rounded-t-[12rem]"><div class="absolute bottom-8 right-0 bg-sage text-white w-40 h-40 rounded-full grid place-items-center text-center p-5 rotate-6"><span class="text-sm">Atendimento<br><strong class="font-display text-2xl font-normal">feito para<br>você</strong></span></div></div>
+      <div class="reveal"><span class="text-xs uppercase tracking-[.2em] text-rose font-semibold">Um espaço para se sentir bem</span><h2 class="font-display text-5xl sm:text-6xl leading-tight mt-5">Resultados visíveis,<br>cuidado <em class="text-rose">de verdade.</em></h2><p class="text-ink/65 text-lg leading-relaxed mt-7">Aqui, cada sessão começa pela escuta. Carla combina experiência, tecnologia e um olhar cuidadoso para criar protocolos que respeitam sua pele, seu tempo e seus objetivos.</p><p class="text-ink/65 leading-relaxed mt-4">Do primeiro contato ao acompanhamento dos resultados, você encontra um ambiente reservado, higienizado e acolhedor — sem pressa e sem atendimento impessoal.</p><div class="grid grid-cols-2 gap-5 mt-9 text-sm"><div class="border-t border-ink/15 pt-4"><i class="fa-solid fa-heart text-rose mr-2"></i>Atendimento humanizado</div><div class="border-t border-ink/15 pt-4"><i class="fa-solid fa-microchip text-rose mr-2"></i>Tecnologia segura</div><div class="border-t border-ink/15 pt-4"><i class="fa-solid fa-calendar-check text-rose mr-2"></i>Horários flexíveis</div><div class="border-t border-ink/15 pt-4"><i class="fa-solid fa-location-dot text-rose mr-2"></i>Fácil localização</div></div></div>
+    </div></section>
+
+    <section id="servicos" class="py-24 lg:py-32 bg-ink text-white overflow-hidden"><div class="max-w-7xl mx-auto px-5 sm:px-8"><div class="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14"><div><span class="text-xs uppercase tracking-[.2em] text-blush">Procedimentos</span><h2 class="font-display text-5xl sm:text-6xl mt-4">Seu cuidado, por inteiro.</h2></div><p class="text-white/60 max-w-md">Protocolos personalizados para valorizar sua beleza natural e trazer praticidade à rotina.</p></div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <article class="service-card group relative min-h-[480px] overflow-hidden"><img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=85" alt="Pele suave após procedimento estético" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15"></div><div class="absolute inset-x-0 bottom-0 p-7"><span class="text-xs tracking-[.2em]">01</span><h3 class="font-display text-3xl mt-2">Fotodepilação Definitiva</h3><p class="text-white/70 mt-3">Redução progressiva dos pelos com conforto, segurança e tecnologia.</p></div></article>
+        <article class="service-card group relative min-h-[480px] overflow-hidden md:translate-y-8"><img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=85" alt="Tratamento facial profissional" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15"></div><div class="absolute inset-x-0 bottom-0 p-7"><span class="text-xs tracking-[.2em]">02</span><h3 class="font-display text-3xl mt-2">Tratamentos Faciais</h3><p class="text-white/70 mt-3">Cuidados que renovam, hidratam e devolvem o viço natural da sua pele.</p></div></article>
+        <article class="service-card group relative min-h-[480px] overflow-hidden"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=85" alt="Massagem e tratamento estético corporal" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15"></div><div class="absolute inset-x-0 bottom-0 p-7"><span class="text-xs tracking-[.2em]">03</span><h3 class="font-display text-3xl mt-2">Estética Corporal</h3><p class="text-white/70 mt-3">Protocolos para contorno, bem-estar e uma relação mais leve com seu corpo.</p></div></article>
+      </div>
+    </div></section>
+
+    <section id="avaliacoes" class="py-24 lg:py-36"><div class="max-w-7xl mx-auto px-5 sm:px-8"><div class="reveal text-center max-w-3xl mx-auto"><div class="text-amber-500 tracking-[.25em]">★★★★★</div><h2 class="font-display text-6xl sm:text-7xl mt-4">5.0 no Google</h2><p class="text-ink/55 mt-3">13 avaliações de quem já viveu essa experiência.</p></div><div class="grid md:grid-cols-3 gap-5 mt-14">
+      <blockquote class="review reveal bg-white p-8 shadow-soft"><i class="fa-solid fa-quote-left text-3xl text-blush"></i><p class="mt-6 leading-relaxed text-ink/75">“A paciência e o cuidado durante as sessões me deixaram totalmente à vontade. A competência e dedicação são evidentes.”</p><footer class="mt-8 pt-5 border-t border-ink/10"><strong class="text-sm">Kevilly Vitória</strong><span class="block text-xs text-ink/45 mt-1">Avaliação no Google</span></footer></blockquote>
+      <blockquote class="review reveal bg-rose text-white p-8 shadow-soft md:-translate-y-5"><i class="fa-solid fa-quote-left text-3xl text-white/30"></i><p class="mt-6 leading-relaxed text-white/85">“Meus pelos já diminuíram muito, além de demorar pra crescer. Também adoro os outros procedimentos. Recomendo a todos!”</p><footer class="mt-8 pt-5 border-t border-white/20"><strong class="text-sm">Soraia Menezes</strong><span class="block text-xs text-white/55 mt-1">Avaliação no Google</span></footer></blockquote>
+      <blockquote class="review reveal bg-white p-8 shadow-soft"><i class="fa-solid fa-quote-left text-3xl text-blush"></i><p class="mt-6 leading-relaxed text-ink/75">“Profissional qualificada, ambiente acolhedor e trata a gente com muito amor. Trabalho impecável!”</p><footer class="mt-8 pt-5 border-t border-ink/10"><strong class="text-sm">Beatriz Sousa</strong><span class="block text-xs text-ink/45 mt-1">Avaliação no Google</span></footer></blockquote>
+    </div></div></section>
+
+    <section id="contato" class="bg-blush/65"><div class="max-w-7xl mx-auto grid lg:grid-cols-2"><div class="reveal p-8 sm:p-14 lg:p-20"><span class="text-xs uppercase tracking-[.2em] text-rose font-semibold">Estamos perto de você</span><h2 class="font-display text-5xl sm:text-6xl mt-5">Vamos cuidar<br>de você?</h2><div class="mt-10 space-y-6"><a href="https://www.google.com/maps/search/?api=1&query=R.%20Teófilo%20Haeck%2C%20377%20Jardim%20Amalia%20Engenheiro%20Coelho%20SP" target="_blank" rel="noopener" class="flex gap-4 group"><i class="fa-solid fa-location-dot text-rose mt-1"></i><span>R. Teófilo Haeck, 377 — Jardim Amalia<br>Engenheiro Coelho — SP, 13445-254<br><u class="text-sm text-rose group-hover:no-underline">Abrir rota no Google Maps</u></span></a><div class="flex gap-4"><i class="fa-regular fa-clock text-rose mt-1"></i><span>Segunda a sábado<br><small class="text-ink/60">Atendimento até às 18h</small></span></div><a href="tel:+5519971131650" class="flex gap-4"><i class="fa-solid fa-phone text-rose mt-1"></i><span>(19) 97113-1650</span></a></div><a href="https://wa.me/5519971131650?text=Olá%2C%20Carla!%20Vi%20seu%20site%20e%20quero%20agendar%20uma%20avaliação." target="_blank" rel="noopener" class="inline-flex mt-10 rounded-full bg-ink text-white px-7 py-4 font-semibold hover:bg-rose transition-colors"><i class="fa-brands fa-whatsapp text-lg mr-2"></i>Falar com a Carla</a></div><a href="https://www.google.com/maps/search/?api=1&query=R.%20Teófilo%20Haeck%2C%20377%20Jardim%20Amalia%20Engenheiro%20Coelho%20SP" target="_blank" rel="noopener" class="relative min-h-[420px] overflow-hidden group"><img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1200&q=85" alt="Interior claro e acolhedor de clínica de estética" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"><span class="absolute bottom-8 left-8 bg-white px-5 py-3 shadow-soft text-sm font-semibold"><i class="fa-solid fa-diamond-turn-right text-rose mr-2"></i>Como chegar</span></a></div></section>
+  </main>
+
+  <footer class="bg-ink text-white/55 py-8"><div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row gap-4 justify-between text-xs"><p>© <span id="year"></span> Carla Estética & Fotodepilação.</p><p>Atendimento feminino e acolhedor em Engenheiro Coelho — SP.</p></div></footer>
+  <a href="https://wa.me/5519971131650?text=Olá%2C%20Carla!%20Gostaria%20de%20agendar%20uma%20avaliação%20gratuita." target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp" class="fixed right-5 bottom-5 z-40 w-16 h-16 rounded-full bg-[#25D366] text-white grid place-items-center text-3xl shadow-soft hover:scale-110 transition-transform"><i class="fa-brands fa-whatsapp"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from('.hero-copy', { y: 34, opacity: 0, duration: .9, stagger: .12, ease: 'power3.out' });
+      gsap.from('.hero-visual', { x: 50, opacity: 0, duration: 1.1, ease: 'power3.out' });
+      gsap.utils.toArray('.reveal').forEach(el => gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 86%', once: true }, y: 45, opacity: 0, duration: .85, ease: 'power3.out' }));
+      gsap.from('.service-card', { scrollTrigger: { trigger: '#servicos', start: 'top 65%', once: true }, y: 70, opacity: 0, duration: .9, stagger: .15, ease: 'power3.out' });
+    }
+  </script>
+</body>
+</html>
