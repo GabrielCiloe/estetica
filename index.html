@@ -23,6 +23,7 @@
     body{background:#f8f3ee}.noise{background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E")}
     .hero-img{clip-path:polygon(8% 0,100% 0,100% 92%,88% 100%,0 100%,0 10%)}
     .marquee{animation:marquee 22s linear infinite}.marquee>span{display:flex;flex-shrink:0;min-width:100vw;justify-content:space-around}@keyframes marquee{to{transform:translateX(-50%)}}
+    @media(min-width:768px){#servicos .grid{display:flex;width:max-content}#servicos .service-card{width:min(72vw,760px);flex:none}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.marquee{animation:none}}
   </style>
 </head>
@@ -38,7 +39,7 @@
 
   <main>
     <section id="inicio" class="relative min-h-screen pt-28 pb-16 flex items-center overflow-hidden">
-      <div class="absolute top-24 -left-40 w-96 h-96 rounded-full bg-blush/60 blur-3xl"></div>
+      <div class="zoom-back absolute top-24 -left-40 w-96 h-96 rounded-full bg-blush/60 blur-3xl"></div>
       <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center">
         <div class="relative z-10 pt-8 lg:pt-0">
           <div class="hero-copy inline-flex items-center gap-2 text-xs uppercase tracking-[.2em] text-rose font-semibold mb-7"><span class="w-8 h-px bg-rose"></span> Beleza que respeita você</div>
@@ -50,7 +51,7 @@
           </div>
           <div class="hero-copy mt-12 flex gap-8"><div><strong class="font-display text-3xl">5.0</strong><div class="text-amber-500 text-xs tracking-wider">★★★★★</div></div><div class="border-l border-ink/15 pl-8 text-sm text-ink/60 leading-relaxed">Excelência confirmada<br>por clientes reais no Google</div></div>
         </div>
-        <div class="hero-visual relative lg:h-[690px]">
+        <div class="hero-visual layered-zoom relative lg:h-[690px]">
           <div class="hero-img h-[520px] lg:h-full overflow-hidden bg-blush shadow-soft"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=88" alt="Mulher recebendo tratamento facial em ambiente tranquilo" class="w-full h-full object-cover" fetchpriority="high"></div>
           <div class="absolute -bottom-5 -left-5 sm:-left-10 bg-white p-5 shadow-soft max-w-[220px]"><div class="flex items-center gap-3"><span class="grid place-items-center w-11 h-11 rounded-full bg-blush text-rose"><i class="fa-solid fa-wand-magic-sparkles"></i></span><span class="text-sm font-semibold">Cuidado humano.<br>Tecnologia de ponta.</span></div></div>
         </div>
@@ -90,10 +91,45 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       gsap.registerPlugin(ScrollTrigger);
-      gsap.from('.hero-copy', { y: 34, opacity: 0, duration: .9, stagger: .12, ease: 'power3.out' });
-      gsap.from('.hero-visual', { x: 50, opacity: 0, duration: 1.1, ease: 'power3.out' });
-      gsap.utils.toArray('.reveal').forEach(el => gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 86%', once: true }, y: 45, opacity: 0, duration: .85, ease: 'power3.out' }));
-      gsap.from('.service-card', { scrollTrigger: { trigger: '#servicos', start: 'top 65%', once: true }, y: 70, opacity: 0, duration: .9, stagger: .15, ease: 'power3.out' });
+      const reveal = (trigger, targets, vars = {}) => gsap.timeline({
+        scrollTrigger: { trigger, start: 'top 84%', once: true }
+      }).from(targets, { y: 40, opacity: 0, duration: .7, ease: 'power3.out', ...vars });
+
+      gsap.timeline()
+        .from('.hero-copy', { y: 34, opacity: 0, duration: .9, stagger: .12, ease: 'power3.out' })
+        .from('.hero-visual', { x: 50, opacity: 0, duration: 1.1, ease: 'power3.out' }, '-=.8');
+
+      gsap.timeline({ scrollTrigger: { trigger: '#inicio', start: 'top top', end: 'bottom top', scrub: 1 } })
+        .to('.zoom-back', { scale: 1.5, yPercent: -20 }, 0)
+        .to('.hero-img', { scale: 1.18, yPercent: -8 }, 0)
+        .to('.hero-visual > div:last-child', { scale: 1.35, yPercent: -70 }, 0);
+
+      gsap.utils.toArray('.reveal:not(.review)').forEach(el => reveal(el, el));
+      reveal('#avaliacoes .grid', '.review', {
+        scale: .35, y: 0, duration: .55,
+        stagger: { amount: .6, from: 'center' }, ease: 'back.out(1.7)'
+      });
+
+      gsap.utils.toArray('section img').forEach(image => gsap.to(image, {
+        yPercent: -10, scale: 1.08, ease: 'none',
+        scrollTrigger: { trigger: image.parentElement, start: 'top bottom', end: 'bottom top', scrub: true }
+      }));
+
+      ScrollTrigger.matchMedia({
+        '(min-width: 768px)': () => {
+          const section = document.querySelector('#servicos');
+          const track = section.querySelector('.grid');
+          const cards = gsap.utils.toArray('.service-card');
+          const distance = () => Math.max(0, track.scrollWidth - innerWidth + 40);
+          gsap.timeline({ scrollTrigger: {
+            trigger: section, pin: true, scrub: 1, anticipatePin: 1,
+            start: 'top top', end: () => `+=${distance() + 300}`,
+            invalidateOnRefresh: true
+          }}).to(track, { x: () => -distance(), ease: 'none' })
+            .from(cards.slice(1), { scale: .82, opacity: 0, stagger: .18, ease: 'power2.out' }, 0);
+        },
+        '(max-width: 767px)': () => reveal('#servicos .grid', '.service-card', { stagger: .12 })
+      });
     }
   </script>
 </body>
